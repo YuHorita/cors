@@ -114,11 +114,6 @@ nock('http://example.com')
   .get('/redirectwithoutlocation')
   .reply(302, 'maybe found')
 
-  .get('/redirectinvalidlocation')
-  .reply(302, 'redirecting to junk...', {
-    Location: 'http:///',
-  })
-
   .get('/proxyerror')
   .replyWithError('throw node')
 ;
